@@ -3,10 +3,12 @@ import 'package:flutter_math_fork/flutter_math.dart';
 import 'package:provider/provider.dart';
 
 class DemoPage extends StatelessWidget {
+  const DemoPage({super.key});
+
   @override
   Widget build(BuildContext context) => Center(
         child: Container(
-          constraints: BoxConstraints(maxWidth: 800),
+          constraints: const BoxConstraints(maxWidth: 800),
           child: ChangeNotifierProvider(
             create: (context) => TextEditingController(),
             child: Column(
@@ -20,7 +22,7 @@ class DemoPage extends StatelessWidget {
                       controller: controller,
                       keyboardType: TextInputType.multiline,
                       maxLines: null,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         border: OutlineInputBorder(),
                         labelText: 'Input TeX equation here',
                       ),
@@ -37,7 +39,7 @@ class DemoPage extends StatelessWidget {
                         Center(
                           child: Text(
                             "Flutter Math's output",
-                            style: Theme.of(context).textTheme.headline6,
+                            style: Theme.of(context).textTheme.titleLarge,
                           ),
                         ),
                         Expanded(
@@ -47,12 +49,12 @@ class DemoPage extends StatelessWidget {
                               borderRadius: BorderRadius.circular(5.0),
                             ),
                             alignment: Alignment.topCenter,
-                            padding: EdgeInsets.all(10),
+                            padding: const EdgeInsets.all(10),
                             child: Consumer<TextEditingController>(
                               builder: (context, controller, _) =>
                                   SelectableMath.tex(
                                 controller.value.text,
-                                textStyle: TextStyle(fontSize: 22),
+                                textStyle: const TextStyle(fontSize: 22),
                               ),
                             ),
                           ),

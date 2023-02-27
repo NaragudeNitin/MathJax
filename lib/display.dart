@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_math_fork/flutter_math.dart';
 
 class DisplayMath extends StatelessWidget {
@@ -21,7 +20,7 @@ class DisplayMath extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Text(expression, softWrap: true),
             ),
-            Divider(
+            const Divider(
               thickness: 1.0,
               height: 1.0,
             ),

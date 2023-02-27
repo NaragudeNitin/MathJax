@@ -9,6 +9,8 @@ const largeSections = {
 };
 
 class FeaturePage extends StatelessWidget {
+  const FeaturePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     final entries = supportedData.entries.toList();
@@ -18,11 +20,11 @@ class FeaturePage extends StatelessWidget {
         children: <Widget>[
           Text(
             entries[i].key,
-            style: Theme.of(context).textTheme.headline3,
+            style: Theme.of(context).textTheme.displaySmall,
           ),
           GridView.builder(
             shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
+            physics: const NeverScrollableScrollPhysics(),
             itemCount: entries[i].value.length,
             gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
               maxCrossAxisExtent:
